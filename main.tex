@@ -7,13 +7,16 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+%\usepackage{svg}
 %\usepackage{pdfplots}
 %\usepackage{pdfplotstable}
+\graphicspath{{images/}}
 \author{AUTHOR}
 \title{TITLE}
+\usepackage{mathptmx}
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
-%\logo{} 
+\logo{\includegraphics[scale=0.4]{logo.png}} 
 \institute{Herder Gymnasium Berlin} 
 \date{} 
 %\subject{test} 
@@ -56,7 +59,28 @@ $f \colon \mathbb{R} \rightarrow [0,\infty)$ ist die \textbf{Wahrscheinlichkeits
 $$
 P(a\leq X\leq b)=\int_a^bf(x)\,\mathrm dx
 $$
+
 \end{frame}
+
+\begin{frame}{Eigenschaften}
+Eigenschaften:
+\begin{itemize}
+\item $\forall x \in \mathbb{R}:\, f(x)\geq 0$
+\item $\int_{-\infty}^\infty f(x)\,{\mathrm d}x = 1$
+\end{itemize}
+Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften erfüllt sind.
+\end{frame}
+
+\begin{frame}{Berechnen mithilfe der Dichtefunktion}
+Wahrscheinlichkeit für ein Intervall $[a,b]$:
+$$P(X\in [a,b]) = \int_a^b f(x)\, {\rm d}x = F(b)-F(a).$$
+$F$ ist die sogenannte \textbf{kumultative Verteilungsfunktion}.
+\end{frame}
+
+%\begin{frame}{kumultative Verteilungsfunktion}
+%Kumultative Verteilungsfunktion:\\
+%die Wahrscheinlichkeit für $X \le x$: $F(x) \, = \, P(X \le x)$
+%\end{frame}
 
 
 

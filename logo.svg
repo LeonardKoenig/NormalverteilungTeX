@@ -1,0 +1,14 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" version="1.1" width="168px" height="60px" viewBox="0 0 84 30" fill-rule="evenodd">
+	<style>
+		path {
+			stroke: black;
+			stroke-width: .5;
+		}
+	</style>
+	<path fill="#ff0" d="M1 1 l0 21 l3 0 l0 -6 l6 0 l0 13 l3 0 l0 -21 l-3 0 l0 5 l-6 0 l0 -12 l-3 0 Z"/>
+	<path fill="#fc0" d="M16 5 l0 11 l11 0 l0 -3 l-8 0 l0 -5 l8 0 l0 -3 l-11 0 m0 17 l0 3 l11 0 l0 -3 l-11 0 Z"/>
+	<path fill="#f90" d="M30 5 l0 11 l7 9 l3 0 l0 -1 l-6 -8 c8,0 8,-11 0,-11 l-1 0 m0 3 l0 5 l1 0 c4,0 4,-5 0,-5 l-1 0 m0 -3 l-3 0 Z"/>
+	<path fill="#f60" d="M43 5 l0 11 l3 0 l0 -8 c8.5,0 8.5,14, 0,14 l-3 0 l0 3 l3 0 c12.5,0 12.5,-20, 0,-20 l-3 0 Z"/>
+	<path fill="#f30" d="M58 5 l0 11 l11 0 l0 -3 l-8 0 l0 -5 l8 0 l0 -3 l-11 0 m0 17 l0 3 l11 0 l0 -3 l-11 0 Z"/>
+	<path fill="#f00" d="M72 5 l0 11 l7 9 l0 4 l3 0 l0 -5 l-6 -8 c8,0 8,-11 0,-11 l-1 0 m0 3 l0 5 l1 0 c4,0 4,-5 0,-5 l-1 0 m0 -3 l-3 0 Z"/>
+</svg>
