@@ -1,20 +1,75 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[14pt]{beamer}
+\usetheme{Berkeley}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage[left=2cm,right=4cm,top=3cm,bottom=3cm]{geometry}
-\author{Leonard König}
+\usepackage{graphicx}
+%\usepackage{pdfplots}
+%\usepackage{pdfplotstable}
+\author{AUTHOR}
+\title{TITLE}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{Herder Gymnasium Berlin} 
+\date{} 
+%\subject{test} 
 \begin{document}
--
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Was ist eine Dichtefunktion?}
+\begin{frame}{Wozu eine Dichtefunktion?}
+\textbf{Wahrscheinlichkeitsfunktion}:
+
+{\small $$ P(X \in\mathbb{A}) \, = \, \sum_{x\in A} \rho(x) $$}
+\begin{itemize}
+
+\item eignet sich nur für diskrete Wahrscheinlichkeitsverteilungen:
+
+\begin{itemize}
+\only<1>{
+\item Binomial
+\item Hypergeometrisch
+\item Poisson
+}
+\only<2>{
+\item[$\Rightarrow$] keine Aussage möglich für stetige Verteilungen, da $P(X \, = \, x) = 0 \, \forall X \in \mathbb{A}$
+}
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Definition}
+$ X;a;b \in \mathbb{R}, a<b$\\
+$f \colon \mathbb{R} \rightarrow [0,\infty)$ ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$, wenn gilt:
+$$
+P(a\leq X\leq b)=\int_a^bf(x)\,\mathrm dx
+$$
+\end{frame}
+
+
+
+\section{Was sagt der Grenzwertsatz aus?} % (Bedeutung)
+\subsection{Beweis} %  od. Plausibilitätsprüfung
+\section{Gauß} %Hinführung auf Gauß'sche Formel (e^(-1/2x^2)), so wie es Herr Steinkrauß erläutert hat (oder auch anders, aber in diesem Detailgrad)
+\section{Aufgaben zur lokalen Näherung}
 \end{document}
-- Was ist die Dichtefunktion?
-- Was sagt der Grenzwertsatz? (Bedeutung)
-- Beweis od. Plausibilitätsprüfung
-- Hinführung auf Gauß'sche Formel (e^(-1/2x^2)), so wie es Herr Steinkrauß erläutert hat (oder auch anders, aber in diesem Detailgrad)
+
+
+
 Was ich dann (nachfolgend) mache:
 - Was sagt das Integral aus?
 - Wie bilde ich überhaupt das Integral?
 - Wie gucke ich die Werte nach? (Tabellen)
-+ ein paar Aufgaben (lokalen Näherung)
++ ein paar Aufgaben 
