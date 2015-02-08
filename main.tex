@@ -56,7 +56,7 @@
 \begin{frame}{Definition}
 \textbf{Wahrscheinlichkeit als Flächeninhalt:}
 $\varphi \colon \mathbb{R} \rightarrow [0,\infty)$ mit
-$$P(X \in \mathbb{A})=\int_{\mathbb{A}} f(x)\,\mathrm dx$$
+$$P(X \in \mathbb{A})=\int_{\mathbb{A}} f(x)\,{\mathrm d}x$$
 ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$.
 \end{frame}
 
@@ -103,6 +103,15 @@ $$
 \end{frame}
 
 
+\begin{frame}
+$$
+P(X\leq\ c) = \frac{1}{\sigma} \cdot \int^c_{-\infty} \varphi\ \left(\frac{t-\mu}{\sigma}\right) {\mathrm d}t
+$$
+mit Substitution $g(t):=\frac{t-\mu}{\sigma} \Rightarrow g'(t)=\frac{1}{\sigma}$:
+$$
+= \int^{\frac{c-\mu}{\sigma}}_{-\infty} \varphi(x) {\mathrm d}x =: \phi\ \left(\frac{c-\mu}{\sigma}\right) = \phi\ \left( \frac{c-\mu}{\sqrt{npq}}\right)
+$$
+\end{frame}
 
 
 
