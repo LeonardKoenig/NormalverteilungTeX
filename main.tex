@@ -32,7 +32,7 @@
 
 \section{Was ist eine Dichtefunktion?}
 \begin{frame}{Wozu eine Dichtefunktion?}
-\textbf{Wahrscheinlichkeitsfunktion}:
+\textbf{Bisherige Berechnung}:
 
 {\small $$ P(X \in\mathbb{A}) \, = \, \sum_{x\in A} \rho(x) $$}
 \begin{itemize}
@@ -54,12 +54,10 @@
 \end{frame}
 
 \begin{frame}{Definition}
-$ X;a;b \in \mathbb{R}, a<b$\\
-$f \colon \mathbb{R} \rightarrow [0,\infty)$ ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$, wenn gilt:
-$$
-P(a\leq X\leq b)=\int_a^bf(x)\,\mathrm dx
-$$
-
+\textbf{Wahrscheinlichkeit als Flächeninhalt:}
+$\varphi \colon \mathbb{R} \rightarrow [0,\infty)$ mit
+$$P(X \in \mathbb{A})=\int_{\mathbb{A}} f(x)\,\mathrm dx$$
+ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$.
 \end{frame}
 
 \begin{frame}{Eigenschaften}
@@ -74,13 +72,38 @@ Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften e
 \begin{frame}{Berechnen mithilfe der Dichtefunktion}
 Wahrscheinlichkeit für ein Intervall $[a,b]$:
 $$P(X\in [a,b]) = \int_a^b f(x)\, {\rm d}x = F(b)-F(a).$$
-$F$ ist die sogenannte \textbf{kumultative Verteilungsfunktion}.
+$F$ ist die sogenannte \textbf{kumultative Verteilungsfunktion} mit:
+$$F(x) \, = \, P(X \le x)$$
 \end{frame}
 
-%\begin{frame}{kumultative Verteilungsfunktion}
-%Kumultative Verteilungsfunktion:\\
-%die Wahrscheinlichkeit für $X \le x$: $F(x) \, = \, P(X \le x)$
-%\end{frame}
+\begin{frame}{Suche der Funktion}
+\textbf{Ziel: Annäherung an die Binomialverteilung:}
+\pause
+\begin{itemize}
+\item Verschieben des Erwartungswertes, sodass $\mu=0$:\\
+$k \to k-\mu$
+\item Vereinheitlichen der Breite:\\
+$k-\mu \to \frac{k-\mu}{\sigma}$
+\pause
+\item \glqq Wiederherstellen\grqq\ des Flächeninhalts:\\
+$B(n;p;k) \to \sigma \cdot B(n;p;k)$
+\end{itemize}
+
+\end{frame}
+\begin{frame}{Zwischenstand}
+$$
+\sigma \cdot B(n;p;k) =: \varphi\ \left(\ \frac{k-\mu}{\sigma}\right)
+$$
+$$
+\Leftrightarrow
+\begin{mathbf}
+B(n;p;k) =  \frac{1}{\sigma} \cdot  \varphi\ \left(\ \frac{k-\mu}{\sigma}\right)
+\end{mathbf}
+$$
+\end{frame}
+
+
+
 
 
 
