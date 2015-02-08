@@ -11,8 +11,8 @@
 %\usepackage{pdfplots}
 %\usepackage{pdfplotstable}
 \graphicspath{{images/}}
-\author{AUTHOR}
-\title{TITLE}
+\author{Leonard König, Jochen Jacobs}
+\title{Normalverteilung}
 \usepackage{mathptmx}
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
@@ -57,7 +57,7 @@
 \begin{frame}{Definition}
 \textbf{Wahrscheinlichkeit als Flächeninhalt:}
 $\varphi \colon \mathbb{R} \rightarrow [0,\infty)$ mit
-$$P(X \in \mathbb{A})=\int_{\mathbb{A}} \varphi(x)\,{\mathrm d}x$$
+$$P(X \in \mathbb{A})=\int\displaylimits_{X \in \mathbb{A}} \varphi(x)\,{\mathrm d}x$$
 ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$.
 \end{frame}
 
@@ -66,7 +66,7 @@ ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$.
 Eigenschaften:
 \begin{itemize}
 \item $\forall x \in \mathbb{R}:\, \varphi(x)\geq 0$
-\item $\int_{-\infty}^\infty f(x)\,{\mathrm d}x = 1$
+\item $\int\displaylimits_{-\infty}^\infty f(x)\,{\mathrm d}x = 1$
 \end{itemize}
 Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften erfüllt sind.
 \end{frame}
@@ -74,7 +74,7 @@ Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften e
 \subsection{Nutzung}
 \begin{frame}{Rechnen mithilfe der Dichtefunktion}
 Wahrscheinlichkeit für ein Intervall $[a,b]$:
-$$P(X\in [a,b]) = \int_a^b f(x)\, {\rm d}x = \Phi(b)-\Phi(a).$$
+$$P(X\in [a,b]) = \int\displaylimits_a^b f(x)\, {\rm d}x = \Phi(b)-\Phi(a).$$
 $F$ ist die sogenannte \textbf{kumultative Verteilungsfunktion} mit:
 $$\Phi(x) \, = \, P(X \le x)$$
 \end{frame}
@@ -111,11 +111,11 @@ $$
 
 \begin{frame}{Zusammenfassung}
 $$
-P(X\leq\ c) = \frac{1}{\sigma} \cdot \int^c_{-\infty} \varphi\ \left(\frac{t-\mu}{\sigma}\right) {\mathrm d}t
+P(X\leq\ c) = \frac{1}{\sigma} \cdot \int\displaylimits^c_{-\infty} \varphi\ \left(\frac{t-\mu}{\sigma}\right) {\mathrm d}t
 $$
 mit Substitution $g(t):=\frac{t-\mu}{\sigma} \Rightarrow g'(t)=\frac{1}{\sigma}$:
 $$
-= \int^{\frac{c-\mu}{\sigma}}_{-\infty} \varphi(x) {\mathrm d}x =: \phi\ \left(\frac{c-\mu}{\sigma}\right) = \phi\ \left( \frac{c-\mu}{\sqrt{npq}}\right)
+= \int\displaylimits^{\frac{c-\mu}{\sigma}}_{-\infty} \varphi(x) {\mathrm d}x =: \phi\ \left(\frac{c-\mu}{\sigma}\right) = \phi\ \left( \frac{c-\mu}{\sqrt{npq}}\right)
 $$
 \end{frame}
 
@@ -152,7 +152,7 @@ $a=\pause\frac{1}{2}$
 \begin{frame}{\textrm{\textsc{Gau}ß}sche Normalverteilung}
 Über mehrdimensionale Analysis können wir $b:=\frac{1}{\sqrt{2\cdot \pi}}$ herleiten, damit:
 $$
-1= \Phi =  \int^{\infty}_{-\infty} \varphi(x) {\mathrm d}x = \int^{\infty}_{-\infty} \frac{1}{\sqrt{2\cdot \pi}} \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x
+1= \Phi =  \int\displaylimits^{\infty}_{-\infty} \varphi(x) {\mathrm d}x = \int\displaylimits^{\infty}_{-\infty} \frac{1}{\sqrt{2\cdot \pi}} \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x
 $$
 $\varphi(x)$: \textrm{\textsc{Gau}ß}sche \textbf{Dichtefunktion}\\
 $\Phi(x)$:  \textrm{\textsc{Gau}ß}sche \textbf{Summenfunktion}
