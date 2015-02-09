@@ -1,11 +1,14 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{a4paper,left=15mm,right=15mm, top=1cm, bottom=2cm} 
 \author{Bennet Grützner}
+\title{HandoutNormalverteilung}
 \begin{document}
 
 
@@ -16,13 +19,13 @@ Handout Normalverteilung
 \textbf{Integralwertsatz von DeMoivre und Laplace:}
  \\
 
-$ \lim_{n \rightarrow \infty} P \left(\frac{X_n - n\cdotp}{\sqrt{n\cdotp\cdot(1 - p)}}\right) = \phi(x)$
+$ \lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdotp}{\sqrt{n\cdotp\cdot(1 - p)}}\right) = \phi(x)$
  \\ 
  \\
 Allgemein:
  \\
  
-$ \lim_{n \rightarrow \infty} P \left(\frac{X_n - \mu}{\sigma}\right) = \phi(x)$
+$ \lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - \mu}{\sigma}\right) = \phi(x)$
  \\
  \\
 Dieses $\phi$ ist eine Integralfunktion zu $\varphi$. Das folgt mithilfe der Standardisierung aus der Definition der $\varphi$-Funktion. 
@@ -31,7 +34,7 @@ Dieses $\phi$ ist eine Integralfunktion zu $\varphi$. Das folgt mithilfe der Sta
 \textbf{Kurze Plausibilitätserklärung:}
  \\
  \\
-Die $\varphi$-Funktion stellt den Grenzwert der Binominalverteilung in Unendliche dar. Das heißt aber, der konkrete Wert wird 0. Aus Aufsummieren von unendlich Nullen haben wir beim Integral gehabt. Da war allerdings die Breite eines Wertes Null, nicht die "Höhe". Diese Umwandlung liefert uns hier die Dichtefunktion. Deswegen nehmen wir das Integral der Dichtefunktion.
+Die $\varphi$-Funktion stellt den Grenzwert der Binominalverteilung in Unendliche dar. Das heißt aber, der konkrete Wert wird 0. Aus Aufsummieren von unendlich Nullen haben wir beim Integral gehabt. Da war allerdings die Breite eines Wertes Null, nicht die \glqq Höhe\grqq. Diese Umwandlung liefert uns hier die Dichtefunktion. Deswegen nehmen wir das Integral der Dichtefunktion.
  \\
  \\
 \textbf{Nutzung der Integralfunktion}
