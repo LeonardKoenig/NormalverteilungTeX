@@ -19,14 +19,9 @@
  \titlepage
 \end{frame}
 
-
 \section{Inhalt}
-\begin{frame}{Inhalt}
- \begin{itemize}
- \item Standardisierung
- \item Die Integralfunktion
- \item Anwendung der Integralfunktion
-\end{itemize} 
+\begin{frame}[allowframebreaks]{Inhalt}
+ \tableofcontents
 \end{frame}
 
 \section{Standardisierung}
@@ -46,6 +41,153 @@ $$ Z = \frac{X - \mu}{\sigma} $$
 Damit die Fläche gleichbleibt, gilt:
 $$ Y = \sigma \cdot B_{n;p}(Z) $$
 
+\end{frame}
+
+
+\section{Dichtefunktionen}
+\begin{frame}{Wozu eine Dichtefunktion?}
+\textbf{Bisherige Berechnung}:
+
+{\small $$ P(X \in\mathbb{A}) \, = \, \sum_{x\in A} \rho(x) $$}
+\begin{itemize}
+
+\item eignet sich nur für diskrete Wahrscheinlichkeitsverteilungen:
+
+\begin{itemize}
+\only<1>{
+\item Binomial
+\item Hypergeometrisch
+\item Poisson
+}
+\only<2>{
+\item[$\Rightarrow$] keine Aussage möglich für stetige Verteilungen, da $P(X \, = \, x) = 0 \, \forall X \in \mathbb{A}$
+}
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Definition}
+\begin{frame}{Definition}
+\textbf{Wahrscheinlichkeit als Flächeninhalt:}
+$\varphi \colon \mathbb{R} \rightarrow [0,\infty)$ mit
+$$P(X \in \mathbb{A})=\int\displaylimits_{X \in \mathbb{A}} \varphi(x)\,{\mathrm d}x$$
+ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$.
+\end{frame}
+
+\subsection{Eigenschaften}
+\begin{frame}{Eigenschaften}
+Eigenschaften:
+\begin{itemize}
+\item $\forall x \in \mathbb{R}:\, \varphi(x)\geq 0$
+\item $\int\displaylimits_{-\infty}^\infty f(x)\,{\mathrm d}x = 1$
+\end{itemize}
+Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften erfüllt sind.
+\end{frame}
+
+\subsection{Nutzung}
+\begin{frame}{Rechnen mithilfe der Dichtefunktion}
+Wahrscheinlichkeit für ein Intervall $[a,b]$:
+$$P(X\in [a,b]) = \int\displaylimits_a^b f(x)\, {\rm d}x = \Phi(b)-\Phi(a).$$
+$F$ ist die sogenannte \textbf{kumultative Verteilungsfunktion} mit:
+$$\Phi(x) \, = \, P(X \le x)$$
+\end{frame}
+
+\section{Approximation der Binomialverteilung}
+\subsection{Standardisierung}
+\begin{frame}{Was ist $\varphi(x)$?}
+\textbf{Ziel: Annäherung an die Binomialverteilung:}
+\pause
+\begin{itemize}
+\item Verschieben des Erwartungswertes, sodass $\mu=0$:\\
+$k \to k-\mu$
+\item Vereinheitlichen der Breite:\\
+$k-\mu \to \frac{k-\mu}{\sigma}$
+\pause
+\item \glqq Wiederherstellen\grqq\ des Flächeninhalts:\\
+$B(n;p;k) \to \sigma \cdot B(n;p;k)$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Zwischenstand}
+$$
+\sigma \cdot B(n;p;k) =: \varphi\ \left(\ \frac{k-\mu}{\sigma}\right)
+$$
+$$
+\Leftrightarrow
+\begin{mathbf}
+B(n;p;k) =  \frac{1}{\sigma} \cdot  \varphi\ \left(\ \frac{k-\mu}{\sigma}\right)
+\end{mathbf}
+$$
+\end{frame}
+
+
+\begin{frame}{Zusammenfassung}
+$$
+P(X\leq\ c) = \frac{1}{\sigma} \cdot \int\displaylimits^c_{-\infty} \varphi\ \left(\frac{t-\mu}{\sigma}\right) {\mathrm d}t
+$$
+mit Substitution $g(t):=\frac{t-\mu}{\sigma} \Rightarrow g'(t)=\frac{1}{\sigma}$:
+$$
+= \int\displaylimits^{\frac{c-\mu}{\sigma}}_{-\infty} \varphi(x) {\mathrm d}x =: \phi\ \left(\frac{c-\mu}{\sigma}\right) = \phi\ \left( \frac{c-\mu}{\sqrt{npq}}\right)
+$$
+\end{frame}
+
+\subsection{lokaler Grenzwertsatz}
+\begin{frame}{\textrm{\textsc{Gau}ß}}
+Nach \textrm{\textsc{Gau}ß} ist eine dazu passende Funktion $\varphi$:
+$$
+\varphi(x)=b\cdot e^{-a\cdot\ x^2}
+$$
+Durch unsere Vereinheitlichung der Breite ist das $1\cdot \sigma$-Intervall $[-1;1]$.
+\end{frame}
+
+
+\begin{frame}{Was ist $a$?}
+Betrachten des Graphen der Binomialverteilung zeigt uns, an $x=\pm 1$ sind Wendestellen.\\
+Für $x=\pm 1$:\\
+2. Ableitung: $2abe^{-a} \cdot (-1+2 a)$\\
+3. Ableitung: $-4 a^{2} b e^{-a} (\pm1) (-3+2 a)$\\
+
+Da $\varphi''(x)=0$ und $\varphi'''(x)\neq0$ muss:\\
+$a=\pause\frac{1}{2}$
+\end{frame}
+
+\begin{frame}{Was ist $b$?}
+Der Flächeninhalt des Graphen muss $1$ sein:
+\begin{eqnarray}
+1&=&\int\displaylimits^{\infty}_{-\infty} b \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x \\
+\Leftrightarrow \frac{1}{b}&=&\int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} {\mathrm d}x \\
+I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Was ist $b$?}
+\small
+\begin{eqnarray}
+I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy \\
+&=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}(x^2 + y^2)} dx \, dy \\ 
+&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} d\varphi \, dr
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Was ist $b$?}
+\small
+\begin{eqnarray}
+&=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} dr \\
+&=& 2 \pi \begin{bmatrix}-e^{-\frac{1}{2} r^2} \end{bmatrix}^\infty_0 = 2 \pi\\
+\Rightarrow b&:=&\frac{1}{\sqrt{2\pi}}
+\end{eqnarray}
+\end{frame}
+
+
+\begin{frame}{\textrm{\textsc{Gau}ß}sche Normalverteilung}
+Damit können wir dann sagen:
+$$
+1= \Phi =  \int\displaylimits^{\infty}_{-\infty} \varphi(x) {\mathrm d}x = \int\displaylimits^{\infty}_{-\infty} \frac{1}{\sqrt{2\cdot \pi}} \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x
+$$
+$\varphi(x)$: \textrm{\textsc{Gau}ß}sche \textbf{Dichtefunktion}\\
+$\Phi(x)$:  \textrm{\textsc{Gau}ß}sche \textbf{Summenfunktion}
 \end{frame}
 
 \section{Die Integralfunktion}
