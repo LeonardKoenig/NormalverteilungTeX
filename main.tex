@@ -139,15 +139,33 @@ Da $\varphi''(x)=0$ und $\varphi'''(x)\neq0$ muss:\\
 $a=\pause\frac{1}{2}$
 \end{frame}
 
-%\begin{frame}{Was ist $b$?}
-%Der Flächeninhalt des Graphen muss $1$ sein:
-%$$
-%1=\int^{\infty}_{-\infty} b \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x
-%$$
-%$$
-%\Leftrightarrow \frac{1}{b}=\int^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} {\mathrm d}x
-%$$
-%\end{frame}
+\begin{frame}{Was ist $b$?}
+Der Flächeninhalt des Graphen muss $1$ sein:
+\begin{eqnarray}
+1&=&\int\displaylimits^{\infty}_{-\infty} b \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x \\
+\Leftrightarrow \frac{1}{b}&=&\int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} {\mathrm d}x \\
+I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Was ist $b$?}
+\small
+\begin{eqnarray}
+I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy \\
+&=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}(x^2 + y^2)} dx \, dy \\ 
+&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} d\varphi \, dr
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Was ist $b$?}
+\small
+\begin{eqnarray}
+&=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} dr \\
+&=& 2 \pi \begin{bmatrix}-e^{-\frac{1}{2} r^2} \end{bmatrix}^\infty_0 = 2 \pi\\
+\Rightarrow b&:=&\frac{1}{\sqrt{2\pi}}
+\end{eqnarray}
+\end{frame}
+
 
 \begin{frame}{\textrm{\textsc{Gau}ß}sche Normalverteilung}
 Über mehrdimensionale Analysis können wir $b:=\frac{1}{\sqrt{2\cdot \pi}}$ herleiten, damit:
