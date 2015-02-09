@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper,twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
@@ -13,7 +13,25 @@
 
 \maketitle
 
-\section{Standardisierung}
+\section{Standardisierung (auch Z-Transformation)}
+Bei der Standardisierung wird eine Zufallsvariable z.B. $X$ so transformiert werden, dass die resultierende Zufallsvariable als Erwartungswert $E(X) = 0$ und als Varianz $V(X)=1$ hat. Dies wird bewirkt, indem folgende Schritte ausgef"uhrt werden:
+\begin{enumerate}
+\item Verschiebung des Erwartungswertes auf der Y-Achse:
+\begin{eqnarray}
+  Z = X - \mu
+\end{eqnarray}
+\item Stauchung jeder Zufallsvariable auf die selbe Varianz:
+\begin{eqnarray}
+  Z = \frac{X - \mu}{\sigma}
+\end{eqnarray}
+\end{enumerate}
+Zur erhaltung der Fl"ache gilt zus"atzlich noch:
+\begin{eqnarray}
+	Y = \sigma \cdot B_{n;p}(Z)
+\end{eqnarray}
+
+\textbf{HIER FEHLT NOCH DER BEWEIS VON ERWARTUNGSWERT UND VARIANZ}
+
 
 \section{Lokaler Grenzwertsatz}
 
@@ -63,17 +81,22 @@ Die Formel der Dichtefunktion $\varphi$ lautet also:
 
  \section{Integralwertsatz von DeMoivre und Laplace}
 
-$ \lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdotp}{\sqrt{n\cdotp\cdot(1 - p)}}\right) = \phi(x)$
-Allgemein:
+\begin{eqnarray}
+\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdotp}{\sqrt{n\cdotp\cdot(1 - p)}}\right) = \phi(x)
+\end{eqnarray}
 
-$ \lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - \mu}{\sigma}\right) = \phi(x)$
+Allgemein:
+\begin{eqnarray}
+\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - \mu}{\sigma}\right) = \phi(x)
+\end{eqnarray}
+
 Dieses $\phi$ ist eine Integralfunktion zu $\varphi$. Das folgt mithilfe der Standardisierung aus der Definition der $\varphi$-Funktion. 
 
 \subsection{Kurze Plausibilitätserklärung:}
 
 Die $\varphi$-Funktion stellt den Grenzwert der Binominalverteilung in Unendliche dar. Das heißt aber, der konkrete Wert wird 0. Aus Aufsummieren von unendlich Nullen haben wir beim Integral gehabt. Da war allerdings die Breite eines Wertes Null, nicht die \glqq Höhe\grqq. Diese Umwandlung liefert uns hier die Dichtefunktion. Deswegen nehmen wir das Integral der Dichtefunktion.
 
-\section{der Integralfunktion}
+\section{Nutzung der Integralfunktion}
 Die Nutzung folgt aus dem Integralwertsatz von DeMoivre und Laplace. Sie erfolgt mithilfe von Tabellen. Es ist unmöglich, eine konkrete Stammfunktion anzugeben (einen geschlossenen mathematischen Term). Wer will, kann es ja mal versuchen.
 \subsection{Nutzung der Tabelle:}
 
@@ -102,10 +125,34 @@ P(X \le X_n) = \phi(x)
 $$
 
 
-\section{k-sigma}
+\section{$k\cdot\sigma$-Intervalle}
+Die Wahrscheinlichkeit $P$, dass ein Ereignis in $k \cdot \sigma$-Umgebung von $\mu$ liegt:\\
+
+\begin{eqnarray}
+& &P(|X-p|\le k\cdot\sigma)\\
+ &=& P(\mu-k\cdot\sigma\le X \le \mu + k\cdot\sigma)\\
+&=& P\left(\frac{\mu-k\cdot\sigma - \mu}{\sigma}\le \frac{X - \mu}{\sigma}\le \frac{\mu + k\cdot\sigma - \mu}{\sigma}\right) \nonumber \\
+&=& P(-k \le Z \le k)\\
+&\approx& \phi(k) - \phi(-k)\\
+&=& \phi(k) - (1 - \phi(k))\\
+&=& \phi(k) + \phi(k) - 1\\
+&=& 2\phi(k)- 1
+\end{eqnarray}
+
+Einsetzungen von $ k = {0;1;2;...}$:
+\begin{eqnarray}
+P(|X-p|\le 1\cdot\sigma) &\approx& 68,27 \%\\
+P(|X-p|\le 2\cdot\sigma) &\approx& 95,45 \%\\
+P(|X-p|\le 3\cdot\sigma) &\approx& 97,73 \%\\
+\text{Vgl. Tschebyschow:} \nonumber \\
+P(|X-p|\le 2\cdot\sigma) &\approx& 75 \%\\
+P(|X-p|\le 3\cdot\sigma) &\approx& 88 \%
+\end{eqnarray}
 
 \section{Ausblick}
+\textbf{FEHLT}
 
+\onecolumn
 \pagebreak
 
 \section*{Anhang: Beispieltabelle von Wikipedia:}
