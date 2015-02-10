@@ -26,26 +26,6 @@
  \tableofcontents
 \end{frame}
 
-\section{Standardisierung}
-
-\begin{frame} {Standardisierung}
-
-Standardisierung (auch Z-Transfomation) ist eine Transformation einer Zufallsvariable, z.B. X, sodass gilt: $$E(x) = \mu = 0$$ und $$V(x) = \sigma^2 = \sigma = 1$$
-
-\end{frame}
-
-\begin{frame} {Standardisierung}
-
-Zunächste Erwartungswert auf Y-Achse verschieben:
-$$ Z = X - \mu $$
-Dann jede Verteilung auf eine Breite bringen
-$$ Z = \frac{X - \mu}{\sigma} $$
-Damit die Fläche gleichbleibt, gilt:
-$$ Y = \sigma \cdot B_{n;p}(Z) $$
-
-\end{frame}
-
-
 \section{Dichtefunktionen}
 \begin{frame}{Wozu eine Dichtefunktion?}
 \textbf{Bisherige Berechnung}:
@@ -95,34 +75,30 @@ $F$ ist die sogenannte \textbf{kumulative Verteilungsfunktion} mit:
 $$\Phi(x) \, = \, P(X \le x)$$
 \end{frame}
 
+
+\section{Standardisierung}
+
+\begin{frame} {Standardisierung}
+
+Standardisierung (auch Z-Transfomation) ist eine Transformation einer Zufallsvariable, z.B. X, sodass gilt: $$E(x) = \mu = 0$$ und $$V(x) = \sigma^2 = \sigma = 1$$
+
+\end{frame}
+
+\begin{frame} {Standardisierung}
+
+Zunächste Erwartungswert auf Y-Achse verschieben:
+$$ Z = X - \mu $$
+Dann jede Verteilung auf eine Breite bringen
+$$ Z = \frac{X - \mu}{\sigma} $$
+Damit die Fläche gleichbleibt, gilt:
+$$ Y = \sigma \cdot B_{n;p}(Z) $$
+
+\end{frame}
+
+
+
+
 \section{Approximation der Binomialverteilung}
-\subsection{Standardisierung}
-\begin{frame}{Was ist $\varphi(x)$?}
-\textbf{Ziel: Annäherung an die Binomialverteilung:}
-\pause
-\begin{itemize}
-\item Verschieben des Erwartungswertes, sodass $\mu=0$:\\
-$k \to k-\mu$
-\item Vereinheitlichen der Breite:\\
-$k-\mu \to \frac{k-\mu}{\sigma}$
-\pause
-\item \glqq Wiederherstellen\grqq\ des Flächeninhalts:\\
-$B(n;p;k) \to \sigma \cdot B(n;p;k)$
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Zwischenstand}
-$$
-\sigma \cdot B(n;p;k) =: \varphi\ \left(\ \frac{k-\mu}{\sigma}\right)
-$$
-$$
-\Leftrightarrow
-\begin{mathbf}
-B(n;p;k) =  \frac{1}{\sigma} \cdot  \varphi\ \left(\ \frac{k-\mu}{\sigma}\right)
-\end{mathbf}
-$$
-\end{frame}
 
 
 \begin{frame}{Zusammenfassung}
@@ -378,7 +354,7 @@ Beispiel d):
 
 \begin{frame}{k-$\sigma$-Intervalle}
 
-Die Wahrscheinlichkeit ($P$), dass Ereignisse in einer k*$\sigma$-Umgebung liegen:
+Die Wahrscheinlichkeit ($P$), dass Ereignisse in einer $k$-$\sigma$-Umgebung liegen:
 $ P(|X-p|\le k\cdot\sigma) = P(\mu-k\cdot\sigma\le X \le \mu + k\cdot\sigma)$\\
 $ = P\left(\frac{\mu-k\cdot\sigma - \mu}{\sigma}\le \frac{X - \mu}{\sigma}\le \frac{\mu + k\cdot\sigma - \mu}{\sigma}\right)$\\
 $ = P(-k \le Z \le k)$\\
@@ -425,7 +401,7 @@ $X_1, X_2, X_3, ...$ eine Folge von Zufallsvariablen mit
 \item es existieren $\mu$ und $\sigma >0$
 \end{itemize}
 Wir betrachten eine standardisierte Zufallsvariable:
-$$ Z_n = \sum_{i = 0}^n(X_i)$$
+$$ Z_n = \sum_{i = 1}^n(X_i)$$
 \end{frame}
 
 \begin{frame}{Zentraler Grenzwertsatz}
@@ -436,7 +412,8 @@ $$\phi_{\mu;\sigma}(X)$$
 
 \end{frame}
 
-\section{Vielen Dank!}
+%\section*{Vielen Dank!}
+\section*{Vielen Dank}
 \begin{frame}{Vielen Dank!}
 \begin{center}
 \parskip 15pt
