@@ -66,7 +66,7 @@ Für die Berechnung von $b$ ziehen wir in Betracht, dass der Flächeninhalt unte
 \Leftrightarrow \frac{1}{b}&=&\int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} {\mathrm d}x \\
 I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} {\mathrm d}x \, {\mathrm d}y \\
 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}(x^2 + y^2)} {\mathrm d}x \, {\mathrm d}y \\ 
-&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} d\varphi \, {\mathrm d}r \\
+&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} r{\mathrm d}\varphi \, {\mathrm d}r \\
 &=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} {\mathrm d}r \\
 &=& 2 \pi \begin{bmatrix}-e^{-\frac{1}{2} r^2} \end{bmatrix}^\infty_0 = 2 \pi\\
 \Rightarrow b&:=&\frac{1}{\sqrt{2\pi}}
@@ -82,7 +82,7 @@ Die Formel der Dichtefunktion $\varphi$ lautet also:
  \section{Integralwertsatz von DeMoivre und Laplace}
 
 \begin{eqnarray}
-\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdotp}{\sqrt{n\cdotp\cdot(1 - p)}}\right) = \phi(x)
+\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdot\ p}{\sqrt{n\cdot\ p\cdot(1 - p)}}\right) = \phi(x)
 \end{eqnarray}
 
 Allgemein:
