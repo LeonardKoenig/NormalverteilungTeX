@@ -21,8 +21,9 @@
  \titlepage
 \end{frame}
 
-\section{Inhalt}
-\begin{frame}[allowframebreaks]{Inhalt}
+%\section{Inhalt}
+%[allowframebreaks]
+\begin{frame}{Inhalt}
  \tableofcontents
 \end{frame}
 
@@ -62,7 +63,7 @@ ist die \textbf{Wahrscheinlichkeitsdichte} der Verteilung von $X$.
 Eigenschaften:
 \begin{itemize}
 \item $\forall x \in \mathbb{R}:\, \varphi(x)\geq 0$
-\item $\int\displaylimits_{-\infty}^\infty f(x)\,{\mathrm d}x = 1$
+\item $\int\displaylimits_{-\infty}^\infty \varphi\ (x)\,{\mathrm d}x = 1$
 \end{itemize}
 Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften erfüllt sind.
 \end{frame}
@@ -70,7 +71,7 @@ Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften e
 \subsection{Nutzung}
 \begin{frame}{Rechnen mithilfe der Dichtefunktion}
 Wahrscheinlichkeit für ein Intervall $[a,b]$:
-$$P(X\in [a,b]) = \int\displaylimits_a^b f(x)\, {\rm d}x = \Phi(b)-\Phi(a).$$
+$$P(X\in [a,b]) = \int\displaylimits_a^b \varphi\ (x)\, {\rm d}x = \Phi(b)-\Phi(a).$$
 $F$ ist die sogenannte \textbf{kumulative Verteilungsfunktion} mit:
 $$\Phi(x) \, = \, P(X \le x)$$
 \end{frame}
@@ -107,8 +108,7 @@ P(X\leq\ c) = \frac{1}{\sigma} \cdot \int\displaylimits^c_{-\infty} \varphi\ \le
 $$
 mit Substitution $g(t):=\frac{t-\mu}{\sigma} \Rightarrow g'(t)=\frac{1}{\sigma}$:
 $$
-= \int\displaylimits^{\frac{c-\mu}{\sigma}}_{-\infty} \varphi(x) {\mathrm d}x =: \phi\ \left(\frac{c-\mu}{\sigma}\right) = \phi\ \left( \frac{c-\mu}{\sqrt{npq}}\right)
-$$
+= \int\displaylimits^{\frac{c-\mu}{\sigma}}_{-\infty} \varphi(x) {\mathrm d}x =: \phi\ \left(\frac{c-\mu}{\sigma}\right) $$
 \end{frame}
 
 \subsection{lokaler Grenzwertsatz}
@@ -136,7 +136,7 @@ Der Flächeninhalt des Graphen muss $1$ sein:
 \begin{eqnarray}
 1&=&\int\displaylimits^{\infty}_{-\infty} b \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x \\
 \Leftrightarrow \frac{1}{b}&=&\int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} {\mathrm d}x \\
-I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy
+I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} {\mathrm d}x \, {\mathrm d}y
 \end{eqnarray}
 \end{frame}
 
@@ -145,14 +145,14 @@ I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\inf
 \begin{eqnarray}
 I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy \\
 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}(x^2 + y^2)} dx \, dy \\ 
-&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} d\varphi \, dr
+&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} r{\mathrm d}\varphi \, dr
 \end{eqnarray}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Was ist $b$?}
 \small
 \begin{eqnarray}
-&=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} dr \\
+&=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} {\mathrm d}r \\
 &=& 2 \pi \begin{bmatrix}-e^{-\frac{1}{2} r^2} \end{bmatrix}^\infty_0 = 2 \pi\\
 \Rightarrow b&:=&\frac{1}{\sqrt{2\pi}}
 \end{eqnarray}
@@ -162,7 +162,7 @@ I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\inf
 \begin{frame}{\textrm{\textsc{Gau}ß}sche Normalverteilung}
 Damit können wir dann sagen:
 $$
-1= \Phi =  \int\displaylimits^{\infty}_{-\infty} \varphi(x) {\mathrm d}x = \int\displaylimits^{\infty}_{-\infty} \frac{1}{\sqrt{2\cdot \pi}} \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x
+1= \lim\limits_{x \to \infty} (\Phi(x)) =  \int\displaylimits^{\infty}_{-\infty} \varphi(x) {\mathrm d}x = \int\displaylimits^{\infty}_{-\infty} \frac{1}{\sqrt{2\cdot \pi}} \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x
 $$
 $\varphi(x)$: \textrm{\textsc{Gau}ß}sche \textbf{Dichtefunktion}\\
 $\Phi(x)$:  \textrm{\textsc{Gau}ß}sche \textbf{Summenfunktion}
