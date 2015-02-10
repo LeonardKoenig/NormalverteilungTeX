@@ -229,8 +229,8 @@ Beweis:
 
 Beispiel:
 \begin{itemize}
- \item p = 0,35
- \item n = 110
+ \item p = 0,035
+ \item n = 1100
 \end{itemize}
 
 \end{frame}
@@ -239,9 +239,9 @@ Beispiel:
 
 Beispiel:
 \begin{itemize}
- \item p = 0,35
- \item n = 110
- \item $\mu = 0,35 \cdot 110 = 38,5 $
+ \item p = 0,035
+ \item n = 1100
+ \item $\mu = 0,035 \cdot 1100 = 38,5 $
 \end{itemize}
 
 \end{frame}
@@ -250,11 +250,12 @@ Beispiel:
 
 Beispiel:
 \begin{itemize}
- \item p = 0,35
- \item n = 110
- \item $\mu = 0,35 \cdot 110 = 38,5 $
- \item $\sigma$ = $\sqrt{110 \cdot 0,35 \cdot 0,65}$ = $\sqrt{25,025} \approx 5$ 
+ \item p = 0,15
+ \item n = 1100
+ \item $\mu = 0,15 \cdot 1100 = 165 $
+ \item $\sigma$ = $\sqrt{1100 \cdot 0,15 \cdot 0,85}$ = $\sqrt{140,25} \approx 11,84$ 
 \end{itemize}
+ Achtung: $\sigma \ge 3$ bzw. $\sigma^2 = V \ge 9$!
 
 \end{frame}
 
@@ -262,10 +263,10 @@ Beispiel:
 
 Beispiel:
 \begin{itemize}
- \item a) $P(X \le 45)$
- \item b) $P(X < 21)$
- \item c) $P(40 < X)$
- \item d) $P(45 < X_n \le 35)$
+ \item a) $P(X \le 180)$
+ \item b) $P(X < 121)$
+ \item c) $P(170 < X)$
+ \item d) $P(150 < X_n \le 180)$
 \end{itemize}
 
 \end{frame}
@@ -274,9 +275,9 @@ Beispiel:
 
 Beispiel a):
  
- $$P(X\le45)$$
- $$P(X_n \le 45) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
- $$ \phi(\frac{45 - 38,5}{5}) = \phi(1,3) $$
+ $$P(X\le180)$$
+ $$P(X_n \le 180) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
+ $$ \phi(\frac{180 - 165}{11,84}) = \phi(1,27) $$
 
 \end{frame}
 
@@ -289,9 +290,9 @@ Beispiel a):
 
 Beispiel b):
  
- $$P(X_n < 21) \rightarrow P(X_n \le 20)$$
- $$P(X_n \le 20) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
- $$ \phi\left(\frac{20 - 38,5}{5}\right) = \phi(-3,7) $$
+ $$P(X_n < 121) \rightarrow P(X_n \le 120)$$
+ $$P(X_n \le 120) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
+ $$ \phi\left(\frac{120 - 165}{11,84}\right) = \phi(-3,8) $$
  
  Was nun?
 
@@ -305,10 +306,10 @@ Beispiel b):
 
 \begin{frame} {Anwendung der Integralfunktion}
  
- $$P(X_n < 21) \rightarrow P(X_n \le 20)$$
- $$P(X_n \le 20) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
- $$ \phi\left(\frac{20 - 38,5}{5}\right) = \phi(-3,7) $$
- $$ \phi(-3,7) = 1 - \phi(3,7)$$
+ $$P(X_n < 121) \rightarrow P(X_n \le 120)$$
+ $$P(X_n \le 120) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
+ $$ \phi\left(\frac{120 - 165}{11,84}\right) = \phi(-3,8) $$
+ $$ \phi(-3,8) = 1 - \phi(3,8)$$
 
 \end{frame}
 
@@ -322,10 +323,10 @@ Beispiel b):
 
 Beispiel c):
  
- $$P(40 < X_n)$$
- $1 - P(X_n \le 40)$
- Somit: $$P(X_n \le 40) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
- $$ \phi\left(\frac{40 - 38,5}{5}\right) = \phi(0,3) $$
+ $$P(170 < X_n)$$
+ $1 - P(X_n \le 170)$
+ Somit: $$P(X_n \le 170) =  \phi\left(\frac{X_n - \mu}{\sigma}\right)$$
+ $$ \phi\left(\frac{170 - 165}{11,84}\right) = \phi(0,42) $$
 
 \end{frame}
 
@@ -339,8 +340,8 @@ Beispiel c):
 
 Beispiel d):
  
- $$P(35 < X_n \le 45)$$
- $$P(X_n \le 45) - P(X_n \le 35)$$
+ $$P(150 < X_n \le 180)$$
+ $$P(X_n \le 180) - P(X_n \le 180)$$
 
 \end{frame}
 
