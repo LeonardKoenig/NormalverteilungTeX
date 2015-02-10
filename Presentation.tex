@@ -7,9 +7,11 @@
 \usepackage{pgfplotstable}
 \author{Bennet, Leonard, Jochen, Philip, Tim}
 \title{Normalverteilung}
+\graphicspath{{images/}}
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
-\logo{\includegraphics[scale=0.15]{logo_herder.png}} 
+\logo{\includegraphics[scale=0.4]{logo.png}} 
+%\logo{\includegraphics[scale=0.15]{logo_herder.png}} 
 \institute{Herder Gymnasium Berlin} 
 \date{}
 
@@ -89,7 +91,7 @@ Eine Funktion $f$ ist genau dann eine Dichtefunktion, wenn diese Eigenschaften e
 \begin{frame}{Rechnen mithilfe der Dichtefunktion}
 Wahrscheinlichkeit für ein Intervall $[a,b]$:
 $$P(X\in [a,b]) = \int\displaylimits_a^b f(x)\, {\rm d}x = \Phi(b)-\Phi(a).$$
-$F$ ist die sogenannte \textbf{kumultative Verteilungsfunktion} mit:
+$F$ ist die sogenannte \textbf{kumulative Verteilungsfunktion} mit:
 $$\Phi(x) \, = \, P(X \le x)$$
 \end{frame}
 
@@ -335,7 +337,7 @@ Beispiel b):
 \end{frame}
 
 \begin{frame} {Anwendung der Integralfunktion}
- 
+
  \includegraphics[width=7.0cm]{TabelleNormalverteilung2.png}
 
 \end{frame}
@@ -406,17 +408,31 @@ $ P(|X-p|\le 3\cdot\sigma) \approx 88$ \%\\
 
 \section{Ausblick: Zentraler Grenzwertsatz}
 
-\begin{frame}
+%\begin{frame}
 
-Seien $X_1, X_2, X_3 ...$ eine Folge von Zufallsvariablen, die auf dem selben Wahrscheinlichkeitsraum alle dieselbe Verteilung aufweisen und unabhängig sind. Weiter seien $\mu$ und $\sigma > 0$ existent.
+%Seien $X_1, X_2, X_3, ...$ eine Folge von Zufallsvariablen, die auf dem selben Wahrscheinlichkeitsraum alle dieselbe Verteilung aufweisen und unabhängig sind. Weiter seien $\mu$ und $\sigma > 0$ existent.
 
-Dann betrachten wir eine standardisierte Zufallsvariable:
+%Dann betrachten wir eine standardisierte Zufallsvariable:
+%$$ Z_n = \sum_{i = 0}^n(X_i)$$
+
+%\end{frame}
+
+\begin{frame}{Zentraler Grenzwertsatz}
+$X_1, X_2, X_3, ...$ eine Folge von Zufallsvariablen mit
+\begin{itemize}
+\item selbe Verteilung bei gleichem Wahrscheinlichkeitsraum
+\item unabhängig
+\item es existieren $\mu$ und $\sigma >0$
+\end{itemize}
+Wir betrachten eine standardisierte Zufallsvariable:
 $$ Z_n = \sum_{i = 0}^n(X_i)$$
-
 \end{frame}
-\begin{frame}
 
-Dann besagt der Zentrale Grenzwertsatz, dass die Verteilungsfunktion von $Z_n$ für $n \rightarrow \infty$ punktweise gegen die Verteilungsfunktion der Normalverteilung $\phi_{\mu;\sigma}(X)$ konvergiert. 
+\begin{frame}{Zentraler Grenzwertsatz}
+%Dann besagt der Zentrale Grenzwertsatz, dass die Verteilungsfunktion von $Z_n$ für $n \rightarrow \infty$ punktweise gegen die Verteilungsfunktion der Normalverteilung $\phi_{\mu;\sigma}(X)$ konvergiert. 
+Dann:\\
+Die Verteilungsfunktion von $Z_n$ konvergiert für $n \to \infty$ punktweise gegen die Verteilungsfunktion der Normalverteilung
+$$\phi_{\mu;\sigma}(X)$$
 
 \end{frame}
 

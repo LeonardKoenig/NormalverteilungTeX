@@ -7,14 +7,14 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{a4paper,left=15mm,right=15mm, top=1cm, bottom=2cm} 
-\author{Tim Gabriel, Bennet Grützner, Philip Hildebrandt, Jochen Jacobs, Loenard Koenig}
+\author{Tim Gabriel, Bennet Grützner, Philip Hildebrandt, Jochen Jacobs, Loenard König}
 \title{Handout Normalverteilung}
 \begin{document}
 
 \maketitle
 
 \section{Standardisierung (auch Z-Transformation)}
-Bei der Standardisierung wird eine Zufallsvariable z.B. $X$ so transformiert werden, dass die resultierende Zufallsvariable als Erwartungswert $E(X) = 0$ und als Varianz $V(X)=1$ hat. Dies wird bewirkt, indem folgende Schritte ausgef"uhrt werden:
+Bei der Standardisierung wird eine Zufallsvariable z.B. $X$ so transformiert werden, dass die resultierende Zufallsvariable als Erwartungswert $E(X) = 0$ und als Varianz $V(X)=1$ hat. Dies wird bewirkt, indem folgende Schritte ausgeführt werden:
 \begin{enumerate}
 \item Verschiebung des Erwartungswertes auf der Y-Achse:
 \begin{eqnarray}
@@ -25,12 +25,12 @@ Bei der Standardisierung wird eine Zufallsvariable z.B. $X$ so transformiert wer
   Z = \frac{X - \mu}{\sigma}
 \end{eqnarray}
 \end{enumerate}
-Zur erhaltung der Fl"ache gilt zus"atzlich noch:
+Zur Erhaltung der Fläche gilt zusätzlich noch:
 \begin{eqnarray}
 	Y = \sigma \cdot B_{n;p}(Z)
 \end{eqnarray}
 
-\textbf{HIER FEHLT NOCH DER BEWEIS VON ERWARTUNGSWERT UND VARIANZ}
+%\textbf{HIER FEHLT NOCH DER BEWEIS VON ERWARTUNGSWERT UND VARIANZ}
 
 
 \section{Lokaler Grenzwertsatz}
@@ -39,8 +39,8 @@ Nach \textrm{\textsc{Gau}ß} ist eine dazu passende Funktion $\varphi$:
 \begin{eqnarray}
 \varphi(x)=b\cdot e^{-a\cdot\ x^2} \label{eq_gauss}
 \end{eqnarray}
-(Beweis entf"allt \-- Ausschlussprinzip)
-Wir ben"otigen also nurnoch passende Werte f"ur $a$ und $b$. Zun"achst $a$:\\ 
+(Beweis entfällt \-- Ausschlussprinzip)
+Wir benötigen also nur noch passende Werte f"ur $a$ und $b$. Zunächst $a$:\\ 
 
 Durch unsere Vereinheitlichung der Breite ist das $1\cdot \sigma$-Intervall $[-1;1]$. Betrachten des Graphen der Binomialverteilung zeigt uns, an $x=\pm 1$ sind Wendestellen.\\
 Für $x=\pm 1$:\\
@@ -48,26 +48,26 @@ Für $x=\pm 1$:\\
 2. Ableitung: $2abe^{-ax^2} (2ax^2-1)$\\
 3. Ableitung: $-4 a^{2} b x e^{-a x^2}(2 a x^2 -3)$\\
 
-Notwendige Bedingung f"ur Wendestelle bei $\pm 1$: $\varphi''(\pm 1)=0$\\
+Notwendige Bedingung für Wendestelle bei $\pm 1$: $\varphi''(\pm 1)=0$\\
 \begin{eqnarray}
 2abe^{-a} (2a-1) = 0 \\
 \Rightarrow a = 0 \lor a = \frac{1}{2}
 \end{eqnarray}
 
-Hinreichende Bedingung f"ur Wendestelle bei $\pm 1$: $\varphi'''(\pm 1)\neq 0$
+Hinreichende Bedingung für Wendestelle bei $\pm 1$: $\varphi'''(\pm 1)\neq 0$
 \begin{eqnarray}
 \mp 4 a^{2} b e^{-a}(2 a -3) \neq 0
 \end{eqnarray}
-F"ur $a=\frac{1}{2}$ ist dies erf"ullt, f"ur $a=0$ kann keine Aussage getroffen werden (muss man aber auch nicht).
+Für $a=\frac{1}{2}$ ist dies erfüllt, für $a=0$ kann keine Aussage getroffen werden (muss man aber auch nicht).
 
-F"ur die Berechnung von $b$ ziehen wir in Betracht, dass der Flächeninhalt unter dem Graphen $1$ sein muss:
+Für die Berechnung von $b$ ziehen wir in Betracht, dass der Flächeninhalt unter dem Graphen $1$ sein muss:
 \begin{eqnarray}
 1&=&\int\displaylimits^{\infty}_{-\infty} b \cdot e^{-\frac{1}{2}x^2} {\mathrm d}x \\
 \Leftrightarrow \frac{1}{b}&=&\int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} {\mathrm d}x \\
-I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} dx \, dy \\
-&=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}(x^2 + y^2)} dx \, dy \\ 
-&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} d\varphi \, dr \\
-&=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} dr \\
+I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}x^2} e^{-\frac{1}{2}y^2} {\mathrm d}x \, {\mathrm d}y \\
+&=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\infty} e^{-\frac{1}{2}(x^2 + y^2)} {\mathrm d}x \, {\mathrm d}y \\ 
+&=& \int\displaylimits^{2 \pi}_{0} \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} d\varphi \, {\mathrm d}r \\
+&=& 2 \pi \int\displaylimits^{\infty}_{0} e^{-\frac{1}{2}r^2} {\mathrm d}r \\
 &=& 2 \pi \begin{bmatrix}-e^{-\frac{1}{2} r^2} \end{bmatrix}^\infty_0 = 2 \pi\\
 \Rightarrow b&:=&\frac{1}{\sqrt{2\pi}}
 \end{eqnarray}
@@ -150,7 +150,14 @@ P(|X-p|\le 3\cdot\sigma) &\approx& 88 \%
 \end{eqnarray}
 
 \section{Ausblick}
-\textbf{FEHLT}
+%\textbf{FEHLT}
+Seien $X_1, X_2, X_3, ...$ eine Folge von Zufallsvariablen, die auf dem selben Wahrscheinlichkeitsraum alle dieselbe Verteilung aufweisen und unabhängig sind. Weiter seien $\mu$ und $\sigma > 0$ existent.
+
+Weiter betrachten wir eine standardisierte Zufallsvariable:
+$$ Z_n = \sum_{i = 0}^n(X_i)$$
+
+Dann besagt der Zentrale Grenzwertsatz, dass die Verteilungsfunktion von $Z_n$ für $n \rightarrow \infty$ punktweise gegen die Verteilungsfunktion der Normalverteilung $\phi_{\mu;\sigma}(X)$ konvergiert. 
+
 
 \onecolumn
 \pagebreak
