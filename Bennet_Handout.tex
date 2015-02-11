@@ -94,24 +94,23 @@ Dieses $\phi$ ist eine Integralfunktion zu $\varphi$. Das folgt mithilfe der Sta
 
 \subsection{Kurze Plausibilitätserklärung:}
 
-Die $\varphi$-Funktion stellt den Grenzwert der Binominalverteilung in Unendliche dar. Das heißt aber, der konkrete Wert wird 0. Aus Aufsummieren von unendlich Nullen haben wir beim Integral gehabt. Da war allerdings die Breite eines Wertes Null, nicht die \glqq Höhe\grqq. Diese Umwandlung liefert uns hier die Dichtefunktion. Deswegen nehmen wir das Integral der Dichtefunktion.
+Die $\varphi$-Funktion stellt den Grenzwert der Binominalverteilung in Unendliche dar. Das heißt aber, der konkrete Wert wird 0. Das Aufsummieren von unendlich Nullen haben wir beim Integral gehabt. Da war allerdings die Breite eines Wertes Null, nicht die \glqq Höhe\grqq. Diese Umwandlung liefert uns hier die Dichtefunktion. Deswegen nehmen wir das Integral der Dichtefunktion.
 
 \section{Nutzung der Integralfunktion}
 Die Nutzung folgt aus dem Integralwertsatz von DeMoivre und Laplace. Sie erfolgt mithilfe von Tabellen. Es ist unmöglich, eine konkrete Stammfunktion anzugeben (einen geschlossenen mathematischen Term). Wer will, kann es ja mal versuchen.
 \subsection{Nutzung der Tabelle:}
 
-Die erste Nachkommastelle so wie alles vor dem Komma steht in der horizontalen, die zweite Nachkommastelle in der vertikalen. 
+Die erste Nachkommastelle, so wie alles vor dem Komma steht, in der Horizontalen, die zweite Nachkommastelle in der Vertikalen. 
 \\
 Der nötige Parameter kann wie folgt ausgerechnet werden:\\
 {\center $X_n$ ist gegeben,\\
 $n$ ist gegeben,\\
 $p$ ist gegeben\\}
-$$
-\mu = n \cdot p
-$$
-$$
-\sigma = n \cdot p \cdot (1 - p)$$
-
+\begin{eqnarray}
+\mu &=& n \cdot p \\
+\sigma &=& n \cdot p \cdot (1 - p)
+\end{eqnarray}
+\setlength{\fboxsep} {1.5cm}
 
 Der Parameter ist dann:
 
@@ -119,11 +118,18 @@ $$
 x = \frac{X_n - \mu}{\sigma}
 $$
 
-Und schlussendlich:
-$$
-P(X \le X_n) = \phi(x)
-$$
+\paragraph{Achtung:}
+ \begin{itemize}
+   \item Die Laplace-Bedingung muss gelten: $\sigma>3$ bzw. $V=\sigma^2>9$\\
+   \item Wenn $n<1000$ ist, so muss die Stetigkeitskorektur angewannt werden: $x = \frac{X_n - \mu \pm \frac{1}{2}}{\sigma}$\\
+ \end{itemize}
 
+
+Und schlussendlich:
+\begin{eqnarray}
+P(X \le X_n) &=& \phi(x) \\
+\phi(-x) &=& 1 - \phi(x)
+\end{eqnarray}
 
 \section{$k\cdot\sigma$-Intervalle}
 Die Wahrscheinlichkeit $P$, dass ein Ereignis in $k \cdot \sigma$-Umgebung von $\mu$ liegt:\\
@@ -133,17 +139,16 @@ Die Wahrscheinlichkeit $P$, dass ein Ereignis in $k \cdot \sigma$-Umgebung von $
  &=& P(\mu-k\cdot\sigma\le X \le \mu + k\cdot\sigma)\\
 &=& P\left(\frac{\mu-k\cdot\sigma - \mu}{\sigma}\le \frac{X - \mu}{\sigma}\le \frac{\mu + k\cdot\sigma - \mu}{\sigma}\right) \nonumber \\
 &=& P(-k \le Z \le k)\\
-&\approx& \phi(k) - \phi(-k)\\
-&=& \phi(k) - (1 - \phi(k))\\
+&\approx& \phi(k) - (1 - \phi(k))\\
 &=& \phi(k) + \phi(k) - 1\\
 &=& 2\phi(k)- 1
 \end{eqnarray}
 
-Einsetzungen von $ k = {0;1;2;...}$:
+Einsetzungen von $ k = {1;2;3; ...}$:
 \begin{eqnarray}
 P(|X-p|\le 1\cdot\sigma) &\approx& 68,27 \%\\
 P(|X-p|\le 2\cdot\sigma) &\approx& 95,45 \%\\
-P(|X-p|\le 3\cdot\sigma) &\approx& 97,73 \%\\
+P(|X-p|\le 3\cdot\sigma) &\approx& 99,73 \%\\
 \text{Vgl. Tschebyschow:} \nonumber \\
 P(|X-p|\le 2\cdot\sigma) &\approx& 75 \%\\
 P(|X-p|\le 3\cdot\sigma) &\approx& 88 \%
