@@ -73,7 +73,7 @@ I^2 &=& \int\displaylimits^{\infty}_{-\infty} \int\displaylimits^{\infty}_{-\inf
 \end{eqnarray}
 Die Formel der Dichtefunktion $\varphi$ lautet also:
 \begin{eqnarray}
- \varphi(x) = \frac{1}{2\pi} \cdot e^{-\frac{1}{2}x^2}
+ \varphi(x) = \frac{1}{\sqrt{2\pi}} \cdot e^{-\frac{1}{2}x^2}
 \end{eqnarray}
 
 
@@ -82,27 +82,24 @@ Die Formel der Dichtefunktion $\varphi$ lautet also:
  \section{Integralwertsatz von DeMoivre und Laplace}
 
 \begin{eqnarray}
-\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdot\ p}{\sqrt{n\cdot\ p\cdot(1 - p)}}\right) = \phi(x)
+\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - n\cdot\ p}{\sqrt{n\cdot\ p\cdot(1 - p)}} \le X\right) = \phi(x)
 \end{eqnarray}
 
 Allgemein:
 \begin{eqnarray}
-\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - \mu}{\sigma}\right) = \phi(x)
+\lim\limits_{n \rightarrow \infty} P \left(\frac{X_n - \mu}{\sigma} \le X\right) = \phi(x)
 \end{eqnarray}
 
 Dieses $\phi$ ist eine Integralfunktion zu $\varphi$. Das folgt mithilfe der Standardisierung aus der Definition der $\varphi$-Funktion. 
 
 \subsection{Kurze Plausibilitätserklärung:}
 
-Die $\varphi$-Funktion stellt den Grenzwert der Binominalverteilung in Unendliche dar, das heißt aber, der konkrete Wert wird 0. Das Aufsummieren von unendlich Nullen hatten wir beim Integral gehabt, dort war allerdings die Breite eines Wertes Null, nicht die \glqq Höhe\grqq. Diese Umwandlung liefert uns hier die Dichtefunktion, weswegen wir das Integral dieser nehmen.
+Die Dichtefunktion $\varphi$ entspricht dem Grenzwert der Binomialverteilung für $n \to \infty$, die einzelnen Werte allerdings werden $0$, da wir \glqq unendlich dünne\grqq Spalten aufsummieren. Daher benutzen wir zur Berechnung von kumulativen Wahrscheinlichkeiten das Integral.
 
 \section{Nutzung der Integralfunktion}
-Die Nutzung folgt aus dem Integralwertsatz von DeMoivre und Laplace und erfolgt mithilfe von Tabellen. Es ist unmöglich, eine konkrete Stammfunktion anzugeben (einen geschlossenen mathematischen Term). Wer will, kann es ja mal versuchen.
+Da wir jedoch keine allgemeine Integralfunktion angeben können, müssen wir auf Tabellen ausweichen
 \subsection{Nutzung der Tabelle:}
-
-Die erste Nachkommastelle, sowie alles vor dem Komma steht, findet man in der Horizontalen, die zweite Nachkommastelle in der Vertikalen. 
-\\
-Der nötige Parameter kann wie folgt ausgerechnet werden:\\
+Die Tabelle benötigt einen Parameter, welcher wie folgt ausgerechnet werden kann:\\
 {\center $X_n$ ist gegeben,\\
 $n$ ist gegeben,\\
 $p$ ist gegeben\\}
@@ -118,16 +115,20 @@ $$
 x = \frac{X_n - \mu}{\sigma}
 $$
 
+Die Tabellen sind wie folgt aufgebaut:\\
+Die Vorkommastellen sowie die erste Nachkommastelle stehen in der Horizontalen, die zweite Nachkommastelle in der Vertikalen.
 \paragraph{Achtung:}
  \begin{itemize}
-   \item Die Laplace-Bedingung muss gelten: $\sigma>3$ bzw. $V=\sigma^2>9$\\
-   \item Wenn $n<1000$ ist, so muss die Stetigkeitskorrektur angewandt werden. Wenn die zu berechnende Wahrscheinlichkeit als Grenze nicht $\pm \infty$ hat, muss die Approximation ausgeglichen werden, dh. $+$ bzw. $-$ $\frac{1}{2}$ gerechnet werden: $$x = \frac{X_n - \mu \pm \frac{1}{2}}{\sigma}$$
+   \item Damit wir die Normalverteilung als angemessene Annäherung and die Binomialverteilung benutzen können, muss die Laplace-Bedingung gelten: $\sigma>3$ bzw. $V=\sigma^2>9$\\
+  \item Da die Binomialverteilung diskret ist, müssen wir - um sie mit der Normalverteilung annähern zu dürfen - für kleine $n$ (Faustregel: $n<1000$) eine Stetigkeitskorrektur anwenden:\\
+  Für eine obere nicht-$\infty$ Grenze, muss man $\frac{1}{2}$ hinzu addieren, falls die untere Grenze nicht-$\infty$ ist, subtrahieren:
+   $$x = \frac{X_n - \mu \pm \frac{1}{2}}{\sigma}$$
  \end{itemize}
 
 
 Und schlussendlich:
 \begin{eqnarray}
-P(X \le X_n) &=& \phi(x) \\
+P(X \le X_n) &=& \phi(x) \\ %Was soll hier stehen?
 \phi(-x) &=& 1 - \phi(x)
 \end{eqnarray}
 
@@ -135,7 +136,7 @@ P(X \le X_n) &=& \phi(x) \\
 Die Wahrscheinlichkeit $P$, dass ein Ereignis in $k \cdot \sigma$-Umgebung von $\mu$ liegt:\\
 
 \begin{eqnarray}
-& &P(|X-p|\le k\cdot\sigma)\\
+& &P(|X-\mu |\le k\cdot\sigma)\\
  &=& P(\mu-k\cdot\sigma\le X \le \mu + k\cdot\sigma)\\
 &=& P\left(\frac{\mu-k\cdot\sigma - \mu}{\sigma}\le \frac{X - \mu}{\sigma}\le \frac{\mu + k\cdot\sigma - \mu}{\sigma}\right) \nonumber \\
 &=& P(-k \le Z \le k)\\
@@ -155,7 +156,6 @@ P(|X-p|\le 3\cdot\sigma) &\approx& 88 \%
 \end{eqnarray}
 
 \section{Ausblick}
-%\textbf{FEHLT}
 Seien $X_1, X_2, X_3, ...$ eine Folge von Zufallsvariablen, die auf dem selben Wahrscheinlichkeitsraum alle dieselbe Verteilung aufweisen und unabhängig sind. Weiter seien $\mu$ und $\sigma > 0$ existent.
 
 Weiter betrachten wir eine standardisierte Zufallsvariable:
